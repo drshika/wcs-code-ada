@@ -5,24 +5,22 @@ function enterTeacherInputs() {
 
 function enterQuestions() {
 	var question = document.getElementById("question").value;
-  	
-  	/*question.setAttribute("type", "text");
-  	question.setAttribute("value", "Hello World!");
-  	document.body.appendChild(question);*/
 }
+
 
 function printInputValue() {
 	var input = document.getElementById("link").value;
-	document.write(input)
+	document.write(input);
 }
 
 
+addQuestionFields() {
+	var newInputBox = document.createElement("input");
+	newInputBox.setAttribute("type", "text");
+	document.body.appendChild(newInputBox);
+}
 
-document.addEventListener('DOMContentLoaded', function() {
-	var newQButton = document.getElementsById('newButton');
-	newButton.addEventListener('click', appendButton() {
-		var newInputBox = document.createElement('moreQuestionFields');
-		newInputBox.type = "text";
-		document.getElementById("moreQuestionFields").appendChild(newInputBox);
-	});
-});
+var nb = document.getElementsById('newButton');
+if (nb) {
+	nb.addEventListener('click', addQuestionFields);
+}
