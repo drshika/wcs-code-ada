@@ -1,0 +1,17 @@
+@import url(https://fonts.googleapis.com/css?family=Roboto:300,600);
+html {
+	min-height: 145px;
+}
+
+body {
+	background-color: #1d1f2b;
+}
+html,
+basic {
+	width: 480px;
+	margin: 0;
+	padding: 0;
+	color: #fff;
+	font: 300 12px 'Open Sans', 'Segoe UI', 'Tahoma', sans-serif;
+	letter-spacing: 0.05em !important;
+}
