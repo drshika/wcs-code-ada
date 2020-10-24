@@ -14,9 +14,11 @@ function enterQuestions() {
 
 function setAlarms(){
     chrome.browserAction.setBadgeText({text: 'ON'});
-    let minutes = parseFloat(target.value);
+    let minutes = parseFloat(event.target.value);
+    console.log(minutes);
     chrome.alarms.create("General", {delayInMinutes: minutes});
     chrome.storage.sync.set({timeMinutes: minutes})
+    
 }
 
 function activateAlarm(){
@@ -32,3 +34,7 @@ function activateAlarm(){
         ],
         priority: 0});
   };
+
+  document.getElementById('sampleSecond').addEventListener('click', setAlarms);
+  document.getElementById('15min').addEventListener('click', setAlarms);
+  document.getElementById('30min').addEventListener('click', setAlarms);
