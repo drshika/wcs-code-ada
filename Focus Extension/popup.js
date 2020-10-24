@@ -1,3 +1,5 @@
+window.resizeTo(1920, 768);
+
 function enterTeacherInputs() {
 	var webpage = document.getElementsById("link").value;
 	var interval = document.getElementById("timing").value;
