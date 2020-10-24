@@ -1,23 +1,25 @@
-'use strict';
+
 
 chrome.alarms.onAlarm.addListener(function() {
+    var opened = window.open('', '_blank', 'toolbar=0,location=0,menubar=0')
+    opened.document.write("<html><head><title>Rapt Question</title></head><body><h1>Can we use the pythagorean formula for other shapes?</h1><button>Yes</button><button>No</button></body></html>");
     chrome.browserAction.setBadgeText({text: ''});
     console.log("Here");
     chrome.notifications.create('notification', {
         type:     'basic',
         iconUrl:  './icon.png',
-        title:    'Hey, I\'m here',
-        message:  'Everyday I\'m Guzzlin\'!',
+        title:    'Click here for more points',
+        message:  'Is the Great Wall of China long?',
         buttons: [
-          {title: 'Keep it Flowing.'}
+          {title: 'Yes', title: 'No'}
         ],
-        priority: 1});
-        console.log("Here again");
+        priority: 2});
+    console.log("Here again");
   });
   
-  chrome.notifications.onButtonClicked.addListener(function() {
-    chrome.storage.sync.get(['minutes'], function(item) {
-      chrome.browserAction.setBadgeText({text: 'ON'});
-      chrome.alarms.create({delayInMinutes: item.minutes});
-    });
-  });
+//   chrome.notifications.onButtonClicked.addListener(function() {
+//     chrome.storage.sync.get(['minutes'], function(item) {
+//       chrome.browserAction.setBadgeText({text: 'ON'});
+//       chrome.alarms.create({delayInMinutes: item.minutes});
+//     });
+//   });

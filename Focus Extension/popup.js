@@ -20,19 +20,7 @@ function setAlarms(){
     chrome.storage.sync.set({timeMinutes: minutes})
 }
 
-// function activateAlarm(){
-//     console.log("Here");
-//     chrome.browserAction.setBadgeText({text: ''});
-//     chrome.notifications.create({
-//         type:     'basic',
-//         iconUrl: 'icon.png',
-//         title:    'Here\'s your questions',
-//         message:  'AAAAAA',
-//         buttons: [
-//           {title: 'Keep it Flowing.'}
-//         ],
-//         priority: 0});
-//   };
+
 
 var sam = document.getElementById('sampleSecond');
 if(sam){
