@@ -5,16 +5,19 @@
     <script src="popup.js"></script>
   </head>
   <body>
-    <h1>What would you like your students to work on today?</h1>
-    <input type="text" id="link" value="Enter website here...">
+    <p style="color:#205A21";><b>What would you like your students to work on today?</b></p>
+    <input type="url" id="link" placeholder="Enter website here...">
+    <button id="check">Enter</button>
 
-    <h2>How long would you like your students to work in between questions?</h2>
-    <input type="text" id="timing" value="Enter time interval here...">
+    <p style="color:#92E192";><b>How many minutes would you like your students to work in between questions?</b></p>
+    <input type="text" id="timing" placeholder="Enter time interval here...">
+    <button id="check">Enter</button>
 
-    <h2>Enter the questions you want to ask</h2>
- 	<input type="text" id="question" value="Enter question here...">
-	<!--button onlick="enterQuestions()">New Question</button> -->
+    <p style="color:#299829";><b>Enter the questions you want to ask</b></p>
+    <input type="text" id="question" placeholder="Enter question here...">
+    <button id="newButton">New Question</button>
+    <div id="moreQuestionFields"></div>
 
-    <button id="checkPage">Click for points</button>
   </body>
+
 </html>
