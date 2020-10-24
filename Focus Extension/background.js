@@ -1,19 +1,25 @@
-// When the extension is installed or upgraded ...
-chrome.runtime.onInstalled.addListener(function() {
-    // Replace all rules ...
-    chrome.declarativeContent.onPageChanged.removeRules(undefined, function() {
-      // With a new rule ...
-      chrome.declarativeContent.onPageChanged.addRules([
-        {
-          // That fires when a page's URL contains youtube.com
-          conditions: [
-            new chrome.declarativeContent.PageStateMatcher({
-              pageUrl: { urlContains: 'youtube.com' },
-            })
-          ],
-          // And shows the extension's page action.
-          actions: [ new chrome.declarativeContent.ShowPageAction() ]
-        }
-      ]);
-    });
+
+
+chrome.alarms.onAlarm.addListener(function() {
+    var opened = window.open('', '_blank', 'toolbar=0,location=0,menubar=0')
+    opened.document.write("<html><head><title>Rapt Question</title></head><body><h1>Can we use the pythagorean formula for other shapes?</h1><button>Yes</button><button>No</button></body></html>");
+    chrome.browserAction.setBadgeText({text: ''});
+    console.log("Here");
+    chrome.notifications.create('notification', {
+        type:     'basic',
+        iconUrl:  './icon.png',
+        title:    'Click here for more points',
+        message:  'Is the Great Wall of China long?',
+        buttons: [
+          {title: 'Yes', title: 'No'}
+        ],
+        priority: 2});
+    console.log("Here again");
   });
+  
+//   chrome.notifications.onButtonClicked.addListener(function() {
+//     chrome.storage.sync.get(['minutes'], function(item) {
+//       chrome.browserAction.setBadgeText({text: 'ON'});
+//       chrome.alarms.create({delayInMinutes: item.minutes});
+//     });
+//   });

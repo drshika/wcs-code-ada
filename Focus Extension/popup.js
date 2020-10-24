@@ -1,4 +1,5 @@
-window.resizeTo(1920, 768);
+
+'use strict'
 
 function enterTeacherInputs() {
 	var webpage = document.getElementsById("link").value;
@@ -6,23 +7,31 @@ function enterTeacherInputs() {
 }
 
 function enterQuestions() {
-	var question = document.getElementById("question").value;
+	var question = document.getElementById("question");
+  	/*question.setAttribute("type", "text");
+  	question.setAttribute("value", "Hello World!");
+  	document.body.appendChild(question);*/
+}
+
+function setAlarms(){
+    chrome.browserAction.setBadgeText({text: 'ON'});
+    let minutes = parseFloat(event.target.value);
+    console.log(minutes);
+    chrome.alarms.create("General", {delayInMinutes: minutes});
+    chrome.storage.sync.set({timeMinutes: minutes})
 }
 
 
-function printInputValue() {
-	var input = document.getElementById("link").value;
-	document.write(input);
+
+var sam = document.getElementById('sampleSecond');
+if(sam){
+    sam.addEventListener('click', setAlarms);
 }
-
-
-addQuestionFields() {
-	var newInputBox = document.createElement("input");
-	newInputBox.setAttribute("type", "text");
-	document.body.appendChild(newInputBox);
+var fift = document.getElementById('15min');
+if(fift){
+    fift.addEventListener('click', setAlarms);
 }
-
-var nb = document.getElementsById('newButton');
-if (nb) {
-	nb.addEventListener('click', addQuestionFields);
+var thirt = document.getElementById('30min');
+if(thirt){
+    thirt.addEventListener('click', setAlarms);
 }
