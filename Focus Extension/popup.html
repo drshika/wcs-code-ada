@@ -1,22 +1,32 @@
-<!doctype html>
+ <!doctype html>
 <html>
   <head>
     <title>Focus Questions</title>
     <script src="popup.js"></script>
+    <link rel="stylesheet" href="popup.css">
   </head>
   <body>
-    <h1>What would you like your students to work on today?</h1>
-    <input type="text" id="link" value="Enter website here...">
 
-    <h2>How long would you like your students to work in between questions?</h2>
-    <button id='sampleSecond' value='0.1'>Sample Second</button>
+    <div id:"basic">
+      <p><b>What would you like your students to work on today?</b></p>
+      <input type="url" id="link" placeholder="Enter website here...">
+      <button id="check">Enter</button>
+
+      <p><b>How many minutes would you like your students to work in between questions?</b></p>
+      <button id='sampleSecond' value='0.1'>Sample Second</button>
       <button id='15min' value='15'>15 Minutes</button>
       <button id='30min' value='30'>30 Minutes</button>
+      
 
-    <h2>Enter the questions you want to ask</h2>
- 	<input type="text" id="question" value="Enter question here...">
-	<button id="NewQuestion">New Question</button>
-    
+      <p><b>Enter the questions you want to ask</b></p>
+      <input type="text" id="question" placeholder="Enter question here...">
+      <button id="newButton">New Question</button>
+      <div id="moreQuestionFields"></div>
+
+    <br /><br />
+      <button id="checkPage">Click for points</button>
+    </div>
+
   </body>
-  <script src="popup.js"></script>
+
 </html>

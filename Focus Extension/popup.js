@@ -1,8 +1,9 @@
+
 'use strict'
 
 function enterTeacherInputs() {
-	var webpage = document.getElementById("link");
-	var interval = document.getElementById("timing");
+	var webpage = document.getElementsById("link").value;
+	var interval = document.getElementById("timing").value;
 }
 
 function enterQuestions() {
@@ -34,4 +35,3 @@ var thirt = document.getElementById('30min');
 if(thirt){
     thirt.addEventListener('click', setAlarms);
 }
-
