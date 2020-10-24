@@ -1,19 +1,22 @@
-// When the extension is installed or upgraded ...
-chrome.runtime.onInstalled.addListener(function() {
-    // Replace all rules ...
-    chrome.declarativeContent.onPageChanged.removeRules(undefined, function() {
-      // With a new rule ...
-      chrome.declarativeContent.onPageChanged.addRules([
-        {
-          // That fires when a page's URL contains youtube.com
-          conditions: [
-            new chrome.declarativeContent.PageStateMatcher({
-              pageUrl: { urlContains: 'youtube.com' },
-            })
-          ],
-          // And shows the extension's page action.
-          actions: [ new chrome.declarativeContent.ShowPageAction() ]
-        }
-      ]);
-    });
-  });
+// chrome.alarms.onAlarm.addListener(activateAlarm(alarm));
+  
+//   chrome.notifications.onButtonClicked.addListener(function() {
+//     chrome.storage.sync.get(['minutes'], function(item) {
+//       chrome.browserAction.setBadgeText({text: 'ON'});
+//       chrome.alarms.create({delayInMinutes: item.minutes});
+//     });
+//   });
+
+//   function activateAlarm(alarm){
+//     chrome.browserAction.setBadgeText({text: ''});
+//     chrome.notifications.create({
+//         type:     'basic',
+//         iconUrl:  'icon.png',
+//         title:    'Here\'s your questions',
+//         message:  'AAAAAA',
+//         buttons: [
+//           {title: 'Keep it Flowing.'}
+//         ],
+//         priority: 0});
+//   };
+  
