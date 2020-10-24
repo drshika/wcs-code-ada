@@ -2,15 +2,17 @@
 
 chrome.alarms.onAlarm.addListener(function() {
     chrome.browserAction.setBadgeText({text: ''});
-    chrome.notifications.create({
+    console.log("Here");
+    chrome.notifications.create('notification', {
         type:     'basic',
-        iconUrl:  'stay_hydrated.png',
-        title:    'Time to Hydrate',
+        iconUrl:  './icon.png',
+        title:    'Hey, I\'m here',
         message:  'Everyday I\'m Guzzlin\'!',
         buttons: [
           {title: 'Keep it Flowing.'}
         ],
-        priority: 0});
+        priority: 1});
+        console.log("Here again");
   });
   
   chrome.notifications.onButtonClicked.addListener(function() {
